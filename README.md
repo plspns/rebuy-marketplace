@@ -1,4 +1,4 @@
-# Rebuy Marketplace MVP
+# Rebuy Marketplace
 
 Rebuy Marketplace is a minimal viable product (MVP) web application for browsing, voting, and purchasing refurbished tech offers.
 
@@ -21,6 +21,8 @@ Rebuy Marketplace is a minimal viable product (MVP) web application for browsing
 - **State management:**  This project uses `BehaviorSubject` for state management instead of NgRx. Since this is a simple MVP with straightforward state requirements, `BehaviorSubject` provides a lightweight solution without the added complexity of NgRx. If the application grows in complexity, adopting a state management library like NgRx should be considered in the future.
 - **Domain-oriented Folder Structure:**  
   The project organizes code by main feature area, with a top-level folder (such as `offers`) containing subfolders for components, services, models, and data. This keeps all related files together, making the codebase easier to navigate and scale as new features are added.
+- **Purchase Flow:**  
+  Since the app uses mock data and does not integrate with the real rebuy product catalog, the purchase action simply redirects to rebuy.de as a demonstration. This approach is aligned with the MVP requirements, which specify using the existing rebuy platform for purchases. In a production environment, this would link to the actual product page on the rebuy platform and let the user complete the purchase.
 
 ## Requirements Coverage
 
