@@ -1,59 +1,74 @@
-# RebuyMarketplace
+# Rebuy Marketplace MVP
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+Rebuy Marketplace is a minimal viable product (MVP) web application for browsing, voting, and purchasing refurbished tech offers.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- Browse a list of offers
+- View offer details
+- Vote on offers
+- Confirm purchase with a custom dialog
+- Responsive, Material Design UI
+
+## Tech Stack
+
+- [Angular 19](https://angular.dev/)
+- [Angular Material](https://material.angular.io/)
+- RxJS for reactive state management
+
+## Technical Decisions
+- **No Backend/API Integration**: For this MVP, all data is managed locally without backend or HTTP integration. This keeps the application lightweight and focused on demonstrating core functionality. The service is structured so it can be easily swapped for real HTTP/API calls.
+- **State management:**  This project uses `BehaviorSubject` for state management instead of NgRx. Since this is a simple MVP with straightforward state requirements, `BehaviorSubject` provides a lightweight solution without the added complexity of NgRx. If the application grows in complexity, adopting a state management library like NgRx should be considered in the future.
+- **Domain-oriented Folder Structure:**  
+  The project organizes code by main feature area, with a top-level folder (such as `offers`) containing subfolders for components, services, models, and data. This keeps all related files together, making the codebase easier to navigate and scale as new features are added.
+
+## Requirements Coverage
+
+- [x] List all offers, ordered by votes
+- [x] View details for a specific offer
+- [x] Upvote/downvote offers
+- [x] Purchase an offer (redirect to rebuy.de)
+- [x] Responsive design and client-side routing
+
+### Development Server
+Start the local server:
 
 ```bash
 ng serve
 ```
+Visit [http://localhost:4200/](http://localhost:4200/) in your browser.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Building for Production
 
 ```bash
-ng generate component component-name
+ng build --configuration production
 ```
+The build artifacts will be stored in the `dist/` directory.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Running Tests
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
+Unit tests:
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+## Project Structure
 
-For end-to-end (e2e) testing, run:
+- `src/app/features/offers/` — Feature modules, components, services, and models for offers
+- `src/app/features/offers/components/purchase-confirm-dialog/` — Custom purchase confirmation dialog
+- `src/app/features/offers/services/offer.service.ts` — Business logic and state management
 
-```bash
-ng e2e
-```
+## Future Improvements
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
-## Additional Resources
+If this MVP were to be developed further, possible next steps could include:
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Integrate with a real backend API for offers and purchases
+- Add authentication and user profiles
+- Implement pagination or infinite scroll for large offer lists
+- Use NgRx for advanced state management
+- Improve accessibility (a11y) and add more ARIA labels
+- Add more comprehensive unit tests
+- Enhance error handling and user feedback
+- Add internationalization (i18n) support
+- Add sorting/filtering options for offers
