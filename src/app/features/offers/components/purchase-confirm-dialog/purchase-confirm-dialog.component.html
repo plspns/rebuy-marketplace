@@ -1,0 +1,27 @@
+<div mat-dialog-content>
+  <div class="dialog-header">
+    <h2 mat-dialog-title>Complete Purchase on Rebuy</h2>
+  </div>
+
+  <p class="dialog-message">
+    You will be redirected to <strong>rebuy.de</strong> to complete your purchase of:
+  </p>
+
+  <div class="offer-summary">
+    <strong>{{ data.offer.title }}</strong>
+    <p class="price">€{{ data.offer.price }}</p>
+  </div>
+
+  <p class="redirect-info">
+    <mat-icon>info</mat-icon>
+    This will open in a new tab. You can return here anytime.
+  </p>
+</div><div mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">
+    Cancel
+  </button>
+  <button mat-raised-button color="primary" (click)="onConfirm()">
+    <mat-icon>open_in_new</mat-icon>
+    Go to Rebuy
+  </button>
+</div>

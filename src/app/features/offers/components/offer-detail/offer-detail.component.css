@@ -1,0 +1,48 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.offer-detail-card {
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.detail-image {
+  height: 300px;
+  object-fit: cover;
+}
+
+.merchant-subtitle {
+  color: var(--mdc-theme-primary, #1976d2);
+  font-weight: 500;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.vote-count {
+  font-weight: 500;
+  margin: 0 4px;
+}
+
+.voted-up {
+  color: #4caf50; /* Material Green */
+}
+
+.voted-down {
+  color: #f44336; /* Material Red */
+}
+
+.purchase-btn {
+  width: 100%;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+}
